@@ -1,2 +1,0 @@
-# Lite version - No numpy/pandas required
-# Works on Termux without compilation
