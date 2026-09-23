@@ -1,19 +1,64 @@
-# 💬 Chatbot template
+# Trading Bot
 
-A simple Streamlit app that shows how to build a chatbot using OpenAI's GPT-3.5.
+A simple cryptocurrency trading bot with paper trading capabilities. Built with Python and Streamlit for easy visualization and control.
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://chatbot-template.streamlit.app/)
+## Features
 
-### How to run it on your own machine
+- **Paper Trading**: Test trading strategies without real money
+- **Technical Indicators**: 
+  - Simple Moving Average (SMA) Crossover
+  - Relative Strength Index (RSI)
+- **Real-time Dashboard**: Interactive Streamlit interface
+- **Backtesting**: Test strategies on historical data
+- **Trade Tracking**: Monitor open positions and trade history
 
-1. Install the requirements
+## Installation
 
-   ```
-   $ pip install -r requirements.txt
-   ```
+```bash
+pip install -r requirements.txt
+```
 
-2. Run the app
+## Usage
 
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+### Run the Dashboard
+```bash
+streamlit run app.py
+```
+
+### Run Backtest
+```bash
+python trading_bot.py
+```
+
+## Configuration
+
+Edit `config.py` to customize:
+- Initial balance
+- Trading pair
+- Trade quantity
+- Strategy parameters (SMA periods, RSI settings)
+
+## Strategy
+
+The bot uses a combination of:
+1. **SMA Crossover**: Buy when short SMA crosses above long SMA, sell when it crosses below
+2. **RSI Filter**: Only trade when RSI is not in overbought (>70) or oversold (<30) conditions
+
+## Project Structure
+
+- `app.py`: Streamlit dashboard application
+- `trading_bot.py`: Core trading bot logic and strategies
+- `config.py`: Configuration settings
+- `requirements.txt`: Python dependencies
+
+## Requirements
+
+- Python 3.8+
+- Streamlit
+- Pandas
+- NumPy
+- Plotly
+
+## Note
+
+This is a **paper trading bot** designed for educational purposes. It does not connect to real exchanges or use real money. Always test thoroughly before using with real funds.
